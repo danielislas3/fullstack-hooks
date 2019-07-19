@@ -8,7 +8,7 @@ exports.getAllFoods=(req,res,nex)=>{
 
 exports.getOneFood=(req,res,nex)=>{
   const {id}=req.params
-  Food.findByID(id)
+  Food.findById(id)
   .then(food=>res.status(200).json({food}))
   .catch(err=>res.status(500).json({err}))
 }
@@ -18,7 +18,7 @@ Food.create({...req.body})
 .then(food=> res.status(201).json({food}))
 .catch(err=> res.status(500).json({err}))
 }
-
+Food.findByID
 exports.updateFood=(req,res,nex)=>{
   const {id}= req.params
   Food.findByIdAndUpdate(id,{...req.body},{new:true})

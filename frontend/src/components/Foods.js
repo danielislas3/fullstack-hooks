@@ -28,9 +28,9 @@ export default function Foods() {
       {
         foods.map(food=>{
           return(
-            <div key={food.id}> 
+            <div key={food._id}> 
               <p>{food.name}</p>
-              <Link to={`/foods/${food.id}`}>
+              <Link to={`/foods/${food._id}`}>
 
                 <button>See details</button>
               </Link>

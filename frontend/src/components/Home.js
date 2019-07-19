@@ -9,6 +9,9 @@ const Home = () => {
       <Link to="/foods">
       <button>See all the foods</button>
       </Link>
+      <Link to="/create">
+      <button>Create</button>
+      </Link>
     </div>
   )
 }
