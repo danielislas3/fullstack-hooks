@@ -1,26 +1,6 @@
 import React from 'react'
-import useForm from './useForm'
-import axios from 'axios';
-import Swal from 'sweetalert2'
 
-
-
-const FoodCreate = (props) => {
-  
-  const [form, handleInput] = useForm()
-
-  const createFood = ()=>{
-    axios.post(`http://localhost:3000/api/foods`,form)
-    .then(({data})=>{
-      console.log(data)
-      Swal.fire('Created', 'Food created', 'success')
-      props.history.push(`/foods`)
-
-    })
-    .catch(err=>console.log)
-  }
-
-  console.log(form)
+function FoodEdit({ handleInput, updateFood }) {
   return (
     <div>
       <p>
@@ -39,9 +19,9 @@ const FoodCreate = (props) => {
         <label>Price</label>
         <input type="text" name="price" placeholder="Price" onChange={e => handleInput(e)} />
       </p>
-      <button onClick={createFood}>Create</button>
+      <button onClick={updateFood}>Update</button>
     </div>
   )
 }
 
-export default FoodCreate
+export default FoodEdit
